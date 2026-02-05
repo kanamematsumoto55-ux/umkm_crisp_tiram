@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisp Tiram - Keripik Jamur Tiram Renyah</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5eada;
+            overflow-x: hidden; 
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: #d35400 !important;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #333 !important;
+        }
+        .nav-link:hover {
+            color: #d35400 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(hero.jpeg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .btn-cta {
+            background-color: #d35400;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: 0.3s;
+            border: none;
+        }
+        .btn-cta:hover {
+            background-color: #e67e22;
+            color: white;
+        }
+
+        /* General Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #d35400;
+            font-weight: 700;
+        }
+
+        /* About Section */
+        .feature-box {
+            text-align: center;
+            padding: 20px;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #d35400;
+            margin-bottom: 15px;
+        }
+
+        .products-section {
+            /* background-color: #fff8e1; */ 
+            padding-bottom: 100px;
+        }
+
+        .products-container-styled {
+            background: linear-gradient(135deg, #fffdf2 0%, #ffe8cc 100%); 
+            border-radius: 30px; 
+            padding: 60px 30px;
+            box-shadow: 0 15px 40px rgba(211, 84, 0, 0.1); 
+            position: relative;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s ease-in-out; 
+            overflow: hidden;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        .card:hover {
+            transform: translateY(-15px); 
+            box-shadow: 0 15px 30px rgba(211, 84, 0, 0.2); 
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        .price-tag {
+            color: #d35400;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .btn-order {
+            background-color: #25d366;
+            color: white;
+            border-radius: 20px;
+            width: 100%;
+            border: none;
+            padding: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-order:hover {
+            background-color: #1ebe57;
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Location Section */
+        .location-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .location-icon {
+            color: #d35400;
+            width: 30px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #d35400;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .products-container-styled {
+                padding: 40px 20px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"></i> Crisp Tiram</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#location">Lokasi</a></li> <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Crispy-nya Juara, <br>Rasanya Bikin Nagih.</h1>
+            <p>Camilan jamur tiram sehat, higienis, dan tanpa bahan pengawet.</p>
+            <a href="#products" class="btn btn-cta">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section container">
+        <h2 class="section-title" data-aos="fade-down">Kenapa Memilih Crisp Tiram?</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="200">
+                <img src="produks.jpeg" class="img-fluid rounded shadow" alt="Jamur Tiram Segar">
+            </div>
+            <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
+                <h3>Camilan Sehat untuk Keluarga</h3>
+                <p>Crisp Tiram adalah usaha kuliner UMKM yang memproduksi keripik jamur tiram berkualitas. Diolah secara rumahan dengan standar kebersihan tinggi.</p>
+                <div class="row mt-4">
+                    <div class="col-6 mb-3"><i class="fas fa-check-circle feature-icon" style="font-size: 1.5rem;"></i> <strong>Tanpa Pengawet</strong></div>
+                    <div class="col-6 mb-3"><i class="fas fa-utensils feature-icon" style="font-size: 1.5rem;"></i> <strong>Higienis</strong></div>
+                    <div class="col-6 mb-3"><i class="fas fa-heart feature-icon" style="font-size: 1.5rem;"></i> <strong>Sehat</strong></div>
+                    <div class="col-6 mb-3"><i class="fas fa-wallet feature-icon" style="font-size: 1.5rem;"></i> <strong>Terjangkau</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="products-container-styled">
+                
+                <h2 class="section-title" data-aos="fade-down">Varian Rasa Favorit</h2>
+                
+                <div class="row justify-content-center">
+                    
+                    <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <img src="ori.png" class="card-img-top" alt="Original">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Original</h5>
+                                <p class="card-text text-muted">Rasa asli jamur yang gurih.</p>
+                                <p class="price-tag">Rp 5.000</p>
+                                <a href="https://wa.me/6281234567890?text=Halo%20Crisp%20Tiram,%20saya%20mau%20pesan%20rasa%20Original." target="_blank" class="btn btn-order"><i class="fab fa-whatsapp"></i> Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="250">
+                        <div class="card">
+                             <img src="keju.png" class="card-img-top" alt="Keju">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Keju</h5>
+                                <p class="card-text text-muted">Gurihnya keju yang creamy.</p>
+                                <p class="price-tag">Rp 6.000</p>
+                                <a href="https://wa.me/6285706272814?text=Halo%20Crisp%20Tiram,%20saya%20mau%20pesan%20rasa%20Keju." target="_blank" class="btn btn-order"><i class="fab fa-whatsapp"></i> Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card">
+                             <img src="jagung.png" class="card-img-top" alt="Jagung Manis">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jagung Manis</h5>
+                                <p class="card-text text-muted">Manis gurih favorit anak-anak.</p>
+                                <p class="price-tag">Rp 6.000</p>
+                                <a href="https://wa.me/6285706272814?text=Halo%20Crisp%20Tiram,%20saya%20mau%20pesan%20rasa%20Jagung%20Manis." target="_blank" class="btn btn-order"><i class="fab fa-whatsapp"></i> Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="550">
+                        <div class="card">
+                             <img src="balado.png" class="card-img-top" alt="Balado">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Balado</h5>
+                                <p class="card-text text-muted">Pedas manis bikin melek.</p>
+                                <p class="price-tag">Rp 7.000</p>
+                                <a href="https://wa.me/6285706272814?text=Halo%20Crisp%20Tiram,%20saya%20mau%20pesan%20rasa%20Balado." target="_blank" class="btn btn-order"><i class="fab fa-whatsapp"></i> Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> </div>
+    </section>
+
+    <section id="location" class="container">
+        <h2 class="section-title" data-aos="fade-down">Kunjungi Kami</h2>
+        <div class="row">
+            <div class="col-md-5 mb-4" data-aos="fade-right">
+                <div class="location-info">
+                    <h4><i class="fas fa-store text-warning"></i> Rumah Produksi</h4>
+                    <p class="text-muted mt-3">Ingin mengambil pesanan langsung (COD) atau melihat stok yang tersedia? Silakan datang ke lokasi kami.</p>
+                    
+                    <hr>
+                    
+                    <div class="d-flex mb-3">
+                        <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <strong>Alamat:</strong><br>
+                            Jl. Raya Patuk Sari, RT 02/RW 01<br>
+                            Kecamatan Wonosari, Kabupaten Malang Kuliner<br>
+                            Jawa Timur, Indonesia.
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <div class="location-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <strong>Jam Operasional:</strong><br>
+                            Senin - Sabtu: 08.00 - 17.00 WIB<br>
+                            Minggu: Tutup
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7" data-aos="fade-left" data-aos-delay="300">
+                <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3950.049081539034!2d112.5307889750083!3d-8.096477491932212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMDUnNDcuMyJTIDExMsKwMzInMDAuMSJF!5e0!3m2!1sen!2sid!4v1770303365722!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container" data-aos="zoom-in">
+            <h4 class="mb-4">Hubungi Kami</h4>
+            <p>Siap kirim ke seluruh Indonesia. Open Reseller & Dropship.</p>
+            
+            <div class="mb-4">
+                <a href="https://wa.me/6285706272814" target="_blank" class="btn btn-success btn-lg mb-3">
+                    <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+                </a>
+            </div>
+
+            <div class="social-icons mb-4">
+                <p>Ikuti kami di sosial media:</p>
+                <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <!-- <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a> -->
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <p class="small">© 2026 Crisp Tiram. UMKM Indonesia.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true, 
+            offset: 100 
+        });
+    </script>
+</body>
+</html>
